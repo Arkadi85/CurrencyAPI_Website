@@ -1,0 +1,246 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-height: 100px;
+  align-items: center;
+  background-color: white;
+  padding: 30px 200px;
+  width: 1440px;
+  box-sizing: border-box;
+}
+
+.logo {
+  max-height: 50px;
+  padding: 10px;
+}
+
+.signup-btn {
+  background-color: #482be7;
+  color: white;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 100px;
+  border: none;
+  font-weight: medium;
+  margin-left: 20px;
+}
+
+.signup-btn:hover {
+  background-color: white;
+  color: #1e0e62;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 100px;
+  border-color: #ebeaed;
+  border-style: solid;
+  border-width: 2px;
+  font-weight: medium;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.signin-link {
+  color: #1e0e62;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: medium;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  list-style: none;
+}
+
+.header-nav a {
+  color: #1e0e62;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: medium;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ellipse {
+  position: absolute; /* Position each circle absolutely */
+  width: 300px; /* Adjust size as needed */
+  height: 300px; /* Adjust size as needed */
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.red {
+  background: #0500ff;
+  animation: circleMoveblue 15s linear infinite;
+}
+
+.blue {
+  background: #00ffe0;
+  transform: translate(30%);
+  animation: circleMoveGreen 10s linear infinite;
+}
+
+.green {
+  background: #ff0d6acf;
+  transform: translate(0%, -30%);
+  animation: circleMoveRed 5s linear infinite;
+}
+
+.hero-container {
+  background-color: rgb(255, 255, 255);
+  flex-grow: 1; /* Take up the remaining space */
+  display: flex;
+  align-items: center;
+  max-width: 2000px;
+  width: 1440px;
+  box-sizing: border-box;
+  justify-content: center;
+  padding-bottom: 200px; /* Reduce to move items up */
+}
+
+@keyframes circleMoveblue {
+  0% {
+    transform: rotate(0deg) translate(-30%) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(-30%) rotate(-360deg);
+  }
+}
+
+@keyframes circleMoveGreen {
+  0% {
+    transform: rotate(0deg) translate(30%) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(30%) rotate(-360deg);
+  }
+}
+
+@keyframes circleMoveRed {
+  0% {
+    transform: rotate(360deg) translate(0%, -30%) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg) translate(0%, -30%) rotate(-360deg);
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column; /* Stacks elements vertically */
+  align-items: center; /* Centers text horizontally */
+  z-index: 10;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  color: #1e0e62;
+  line-height: 0px;
+  text-shadow: 1px 1px 20px white;
+}
+
+.hero-text h2 {
+  font-size: 50px;
+  color: #1e0e62;
+  line-height: 0px;
+}
+.buttons {
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+.get-free-api-btn {
+  width: 170px;
+  height: 60px;
+  background-color: #482be7;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  box-shadow: white 0px 5px 22px 10px;
+  z-index: 100;
+}
+
+.get-free-api-btn:hover {
+  cursor: pointer;
+}
+.go-to-docs-btn:hover {
+  cursor: pointer;
+}
+.go-to-docs-btn {
+  width: 170px;
+  height: 60px;
+  background-color: #e93a7d;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  box-shadow: white 0px 5px 22px 10px;
+  z-index: 100;
+}
+
+.rotating-text {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 36px;
+  margin: 10px 0; /* Adjust as needed for spacing */
+}
+
+.rotating-text p {
+  position: relative;
+}
+
+.rotating-text .word {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  color: #1e0e62;
+  text-shadow: 0px 0px 20px white;
+  font-weight: 700;
+
+  .letter {
+    transform-origin: center center 25px;
+
+    &.out {
+      transform: rotateX(90deg);
+      transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+    }
+    &.in {
+      transition: 0.38s ease;
+    }
+    &.behind {
+      transform: rotateX(-90deg);
+    }
+  }
+}
