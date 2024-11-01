@@ -7,12 +7,12 @@ function redirectToUrl() {
 document.addEventListener("DOMContentLoaded", function () {
   const signupBtn = document.querySelector(".signup-btn");
   const iframeContainer = document.getElementById("iframe-container");
-  const heroContainer = document.querySelector(".hero-container");
+  const mainContent = document.getElementById("main-content");
   const signupIframe = document.getElementById("signup-iframe");
 
   signupBtn.addEventListener("click", function () {
-    // Hide hero container
-    heroContainer.style.display = "none";
+    // Hide main content
+    mainContent.style.display = "none";
 
     // Show iframe container
     iframeContainer.style.display = "block";
