@@ -244,3 +244,18 @@ body {
     }
   }
 }
+
+#iframe-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+#signup-iframe {
+  width: 100%;
+  height: calc(100vh - 100px); /* Adjust the height as needed */
+  border: none;
+  margin: 0;
+  padding: 0;
+}

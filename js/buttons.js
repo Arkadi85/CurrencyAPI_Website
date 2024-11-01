@@ -2,9 +2,25 @@ function redirectToUrl() {
   window.location.href = "https://www.google.com";
 }
 
-document.getElementById("get-free-api-btn")
-  .addEventListener("click", redirectToUrl);
+// buttons.js
 
+document.addEventListener("DOMContentLoaded", function () {
+  const signupBtn = document.querySelector(".signup-btn");
+  const iframeContainer = document.getElementById("iframe-container");
+  const heroContainer = document.querySelector(".hero-container");
+  const signupIframe = document.getElementById("signup-iframe");
+
+  signupBtn.addEventListener("click", function () {
+    // Hide hero container
+    heroContainer.style.display = "none";
+
+    // Show iframe container
+    iframeContainer.style.display = "block";
+
+    // Set iframe src
+    signupIframe.src = "https://app1.currencyexchangeconvertor.com";
+  });
+});
 
 let words = document.querySelectorAll(".word");
 words.forEach((word) => {
