@@ -22,6 +22,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const signupBtn = document.querySelector(".signin-link");
+  const iframeContainer = document.getElementById("iframe-container");
+  const mainContent = document.getElementById("main-content");
+  const signupIframe = document.getElementById("signup-iframe");
+
+  signupBtn.addEventListener("click", function () {
+    // Hide main content
+    mainContent.style.display = "none";
+
+    // Show iframe container
+    iframeContainer.style.display = "block";
+
+    // Set iframe src
+    signupIframe.src = "https://app1.currencyexchangeconvertor.com/login";
+  });
+});
+
 let words = document.querySelectorAll(".word");
 words.forEach((word) => {
   let letters = word.textContent.split("");
