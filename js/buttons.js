@@ -7,38 +7,42 @@ function redirectToUrl() {
 document.addEventListener("DOMContentLoaded", function () {
   const signupBtn = document.querySelector(".signup-btn");
   const signIn = document.querySelector(".signin-link");
+  const getKeyBtn = document.getElementById("get-free-api-btn");
   const logo = document.querySelector(".logo");
   const iframeContainer = document.getElementById("iframe-container");
   const mainContent = document.getElementById("main-content");
   const signupIframe = document.getElementById("signup-iframe");
+  const heroContainer = document.querySelector(".hero-container");
+
+  function showIframe(url) {
+    mainContent.style.visibility = "hidden"; // Change to visibility instead of display
+    heroContainer.style.visibility = "hidden";
+    iframeContainer.style.display = "block";
+    signupIframe.src = url;
+  }
+
+  function hideIframe() {
+    mainContent.style.visibility = "visible";
+    heroContainer.style.visibility = "visible";
+    iframeContainer.style.display = "none";
+    signupIframe.src = "";
+  }
 
   signupBtn.addEventListener("click", function () {
-    // Hide main content
-    mainContent.style.display = "none";
-
-    // Show iframe container
-    iframeContainer.style.display = "block";
-
-    // Set iframe src
-    signupIframe.src = "https://app1.currencyexchangeconvertor.com";
+    showIframe("https://app1.currencyexchangeconvertor.com");
   });
+
   signIn.addEventListener("click", function () {
-    // Hide main content
-    mainContent.style.display = "none";
-
-    // Show iframe container
-    iframeContainer.style.display = "block";
-
-    // Set iframe src
-    signupIframe.src = "https://app1.currencyexchangeconvertor.com/login";
+    showIframe("https://app1.currencyexchangeconvertor.com/login");
   });
+  getKeyBtn.addEventListener("click", function () {
+    showIframe("https://app1.currencyexchangeconvertor.com");
+  });
+
   logo.addEventListener("click", function () {
-    mainContent.style.display = "block";
-    iframeContainer.style.display = "none";
-    signupIframe.src = ""; // Clear the iframe source
+    hideIframe();
   });
 });
-
 
 let words = document.querySelectorAll(".word");
 words.forEach((word) => {
