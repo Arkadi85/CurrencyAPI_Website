@@ -6,18 +6,13 @@ function redirectToUrl() {
 
 document.addEventListener("DOMContentLoaded", function () {
   const signupBtn = document.querySelector(".signup-btn");
-  const iframeContainer = document.getElementById("iframe-container");
   const mainContent = document.getElementById("main-content");
+  const iframeContainer = document.getElementById("iframe-container");
   const signupIframe = document.getElementById("signup-iframe");
 
   signupBtn.addEventListener("click", function () {
-    // Hide main content
     mainContent.style.display = "none";
-
-    // Show iframe container
     iframeContainer.style.display = "block";
-
-    // Set iframe src
     signupIframe.src = "https://app1.currencyexchangeconvertor.com";
   });
 });

@@ -49,43 +49,18 @@
       </div>
     </div>
 
-    <!-- Move iframe container here, outside of other containers -->
+    <!-- Iframe container -->
     <div id="iframe-container" style="display: none">
-      <div id="iframe-loader" style="text-align: center; padding: 20px">
-        Loading...
-      </div>
       <iframe
         id="signup-iframe"
-        src=""
-        style="
-          width: 100%;
-          height: calc(100vh - 100px);
-          border: none;
-          display: none;
-        "
-        onload="this.style.display='block'; document.getElementById('iframe-loader').style.display='none';"
+        style="width: 100%; height: calc(100vh - 100px); border: none"
       ></iframe>
     </div>
 
-    <!-- Single hero container -->
+    <!-- Hero container -->
     <div class="hero-container" id="main-content">
       <div class="hero-text">
-        <h2>Free API for</h2>
-        <h1>Currency Conversion</h1>
-        <div class="rotating-text">
-          <p>
-            <span class="word alizarin">Real-Time Exchange Rates</span>
-            <span class="word wisteria">Historical Data</span>
-            <span class="word peter-river">Multiple Currency Support</span>
-            <span class="word emerald">Secure and Scalable</span>
-          </p>
-        </div>
-        <div class="buttons">
-          <button class="get-free-api-btn" id="get-free-api-btn">
-            Get your key
-          </button>
-          <button class="go-to-docs-btn">Go to docs</button>
-        </div>
+        <!-- Keep your existing hero content -->
       </div>
       <div class="ellipse red"></div>
       <div class="ellipse blue"></div>
