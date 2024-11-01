@@ -6,6 +6,8 @@ function redirectToUrl() {
 
 document.addEventListener("DOMContentLoaded", function () {
   const signupBtn = document.querySelector(".signup-btn");
+  const signIn = document.querySelector(".signin-link");
+  const logo = document.querySelector(".logo");
   const iframeContainer = document.getElementById("iframe-container");
   const mainContent = document.getElementById("main-content");
   const signupIframe = document.getElementById("signup-iframe");
@@ -20,15 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set iframe src
     signupIframe.src = "https://app1.currencyexchangeconvertor.com";
   });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const signupBtn = document.querySelector(".signin-link");
-  const iframeContainer = document.getElementById("iframe-container");
-  const mainContent = document.getElementById("main-content");
-  const signupIframe = document.getElementById("signup-iframe");
-
-  signupBtn.addEventListener("click", function () {
+  signIn.addEventListener("click", function () {
     // Hide main content
     mainContent.style.display = "none";
 
@@ -38,7 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set iframe src
     signupIframe.src = "https://app1.currencyexchangeconvertor.com/login";
   });
+  logo.addEventListener("click", function () {
+    mainContent.style.display = "block";
+    iframeContainer.style.display = "none";
+    signupIframe.src = ""; // Clear the iframe source
+  });
 });
+
 
 let words = document.querySelectorAll(".word");
 words.forEach((word) => {

@@ -279,3 +279,7 @@ body {
   cursor: pointer;
   z-index: 1001;
 }
+
+.logo {
+  cursor: pointer;
+}
