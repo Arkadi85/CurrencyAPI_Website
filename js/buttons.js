@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Check URL hash when page loads
   function checkHash() {
     const hash = window.location.hash;
-    if (hash === "#login") {
+    if (hash.startsWith("#login")) {
       showIframe("https://app1.currencyexchangeconvertor.com/login");
-    } else if (hash === "#signup") {
+    } else if (hash.startsWith("#signup")) {
       showIframe("https://app1.currencyexchangeconvertor.com");
     }
   }
-  checkHash();  
+  checkHash();
   function showIframe(url) {
     mainContent.style.visibility = "hidden"; // Change to visibility instead of display
     heroContainer.style.visibility = "hidden";
