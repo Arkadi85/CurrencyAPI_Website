@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   checkHash();
+  setTimeout(checkHash, 500);
+  window.addEventListener("hashchange", checkHash);
+
   function showIframe(url) {
     mainContent.style.visibility = "hidden"; // Change to visibility instead of display
     heroContainer.style.visibility = "hidden";
@@ -52,6 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
   logo.addEventListener("click", function () {
     hideIframe();
   });
+});
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeHashHandler);
+} else {
+  initializeHashHandler();
+}
+
+// Also try after window load as a fallback
+window.addEventListener("load", function () {
+  setTimeout(initializeHashHandler, 100);
 });
 
 let words = document.querySelectorAll(".word");
