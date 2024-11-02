@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const signupIframe = document.getElementById("signup-iframe");
   const heroContainer = document.querySelector(".hero-container");
 
+  // Check URL hash when page loads
+  function checkHash() {
+    const hash = window.location.hash;
+    if (hash === "#login") {
+      showIframe("https://app1.currencyexchangeconvertor.com/login");
+    } else if (hash === "#signup") {
+      showIframe("https://app1.currencyexchangeconvertor.com");
+    }
+  }
+  checkHash();  
   function showIframe(url) {
     mainContent.style.visibility = "hidden"; // Change to visibility instead of display
     heroContainer.style.visibility = "hidden";
