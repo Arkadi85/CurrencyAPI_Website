@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Check URL hash when page loads
   function checkHash() {
     const hash = window.location.hash;
-    if (hash.startsWith("#login")) {
+    if (hash.includes("#login")) {
       showIframe("https://app1.currencyexchangeconvertor.com/login");
     } else if (hash.startsWith("#signup")) {
       showIframe("https://app1.currencyexchangeconvertor.com");
