@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
       showIframe("https://app1.currencyexchangeconvertor.com/login");
     } else if (hash.startsWith("#signup")) {
       showIframe("https://app1.currencyexchangeconvertor.com");
+    } else if (hash.startsWith("#newpasswordpage")) {
+      showIframe("https://app1.currencyexchangeconvertor.com/newpasswordpage");
     }
   }
   checkHash();
