@@ -1,74 +1,10 @@
 function redirectToUrl() {
-  window.location.href = "https://www.google.com";
+  window.location.href = "https://app1.currencyexchangeconvertor.com";
 }
 
-// buttons.js
-
-document.addEventListener("DOMContentLoaded", function () {
-  const signupBtn = document.querySelector(".signup-btn");
-  const signIn = document.querySelector(".signin-link");
-  const getKeyBtn = document.getElementById("get-free-api-btn");
-  const logo = document.querySelector(".logo");
-  const iframeContainer = document.getElementById("iframe-container");
-  const mainContent = document.getElementById("main-content");
-  const signupIframe = document.getElementById("signup-iframe");
-  const heroContainer = document.querySelector(".hero-container");
-
-  // Check URL hash when page loads
-  function checkHash() {
-    const hash = window.location.hash;
-    if (hash.includes("#login")) {
-      showIframe("https://app1.currencyexchangeconvertor.com/login");
-    } else if (hash.startsWith("#signup")) {
-      showIframe("https://app1.currencyexchangeconvertor.com");
-    } else if (hash.startsWith("#newpasswordpage")) {
-      showIframe("https://app1.currencyexchangeconvertor.com/newpasswordpage");
-    }
-  }
-  checkHash();
-  setTimeout(checkHash, 500);
-  window.addEventListener("hashchange", checkHash);
-
-  function showIframe(url) {
-    mainContent.style.visibility = "hidden"; // Change to visibility instead of display
-    heroContainer.style.visibility = "hidden";
-    iframeContainer.style.display = "block";
-    signupIframe.src = url;
-  }
-
-  function hideIframe() {
-    mainContent.style.visibility = "visible";
-    heroContainer.style.visibility = "visible";
-    iframeContainer.style.display = "none";
-    signupIframe.src = "";
-  }
-
-  signupBtn.addEventListener("click", function () {
-    showIframe("https://app1.currencyexchangeconvertor.com");
-  });
-
-  signIn.addEventListener("click", function () {
-    showIframe("https://app1.currencyexchangeconvertor.com/login");
-  });
-  getKeyBtn.addEventListener("click", function () {
-    showIframe("https://app1.currencyexchangeconvertor.com");
-  });
-
-  logo.addEventListener("click", function () {
-    hideIframe();
-  });
-});
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initializeHashHandler);
-} else {
-  initializeHashHandler();
-}
-
-// Also try after window load as a fallback
-window.addEventListener("load", function () {
-  setTimeout(initializeHashHandler, 100);
-});
+document
+  .getElementById("get-free-api-btn")
+  .addEventListener("click", redirectToUrl);
 
 let words = document.querySelectorAll(".word");
 words.forEach((word) => {
